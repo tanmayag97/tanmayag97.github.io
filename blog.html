@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="google-site-verification" content="5uFYFlmCaMotPqVXKLiYWB_ALAF3nF09Ezgv6v2DElY" />
 	<style type="text/css">
 		/*---------particle.js css--------*/
 		html, body {
@@ -34,31 +33,47 @@
 		}
 		.paragraph {
 			text-align: justify;
-			width: 90%;
+			width: 80%;
 			margin-left: auto;
 			margin-right: auto;
 			color: #AAA;
 		}
 		.fade_rule {
-        height: 1px;
-        width: 90%;
+        height: 2px;
+				min-width: 200px;
+        width: 20%;
         margin: 0 auto;
-        background-image: linear-gradient(top , black 20%, white 50%, black 90%);
-        background-image: -o-linear-gradient(top , black 20%, white 50%, black 90%);
-        background-image: -moz-linear-gradient(top , black 20%, white 50%, black 90%);
-        background-image: -webkit-linear-gradient(top , black 20%, white 50%, black 90%);
-        background-image: -ms-linear-gradient(top , black 20%, white 50%, black 90%);
-        background-image: -webkit-gradient( linear, top, bottom, color-stop(0.2, black), color-stop(0.5, white), color-stop(0.9, black));
+				background-color: #ffb400;
+				/* background-image: linear-gradient(top , black 20%, #ffb400 50%, black 90%);
+        background-image: -o-linear-gradient(top , black 20%, #ffb400 50%, black 90%);
+        background-image: -moz-linear-gradient(top , black 20%, #ffb400 50%, black 90%);
+        background-image: -webkit-linear-gradient(top , black 20%, #ffb400 50%, black 90%);
+        background-image: -ms-linear-gradient(top , black 20%, #ffb400 50%, black 90%);
+        background-image: -webkit-gradient( linear, top, bottom, color-stop(0.2, black), color-stop(0.5, ), color-stop(0.9, black)); */
+	}
+	.fade_rule_mid {
+			height: 1px;
+			width:80%;
+			margin-left: auto;
+			margin-right: auto;
+			background-image: linear-gradient(top , black 20%, white 50%, black 90%);
+			background-image: -o-linear-gradient(top , black 20%, white 50%, black 90%);
+			background-image: -moz-linear-gradient(top , black 20%, white 50%, black 90%);
+			background-image: -webkit-linear-gradient(top , black 20%, white 50%, black 90%);
+			background-image: -ms-linear-gradient(top , black 20%, white 50%, black 90%);
+			background-image: -webkit-gradient( linear, top, bottom, color-stop(0.2, black), color-stop(0.5, white), color-stop(0.9, black));
 	}
 	.desc {
 		animation: fadeint 1.5s;
 	}
-	#nav {
+	.navi {
+		font-size:15px;
+		font-family: Helvetica;
 		text-decoration: none;
-		color: white;
 	}
-	#nav:hover{
-		color: grey
+
+	.navi:hover {
+		text-decoration: none;
 	}
 	@keyframes fadeint {
 		from { opacity: 0;
@@ -68,15 +83,17 @@
 	}
 
 	</style>
-	<title>Blog | Tanmay Agarwal</title>
+	<title>Blog</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#000000" />
-	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="icon" href="logo.png" type="image/x-icon">
-	<link rel="canonical" href="https://tanmayag97.github.io/">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -86,20 +103,37 @@
 	</div>
 	<div id="content" class="container-fluid" style="text-align: center; background-color:black;">
 		<div class="row">
-			<div class="desc col-2" style="position:fixed;">
-				<p><a id="nav" style="color:grey; font-size: 14px" href="index.html">Back home</a></p><br><br>
 
+			<!-- Sidebar (hidden by default) -->
+			<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:4;width:15%;min-width:200px; padding-top: 100px; background-color:#111" id="mySidebar">
+				<a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button navi" style="text-align: center;">Close menu</a><br>
+				<a onclick="w3_close()" class="w3-bar-item w3-button navi" style="text-align: center;" href="#April2020">Apr'20</a>
+				<a onclick="w3_close()" class="w3-bar-item w3-button navi" style="text-align: center;" href="#March2020">Mar'20</a>
+				<a onclick="w3_close()" class="w3-bar-item w3-button navi" style="text-align: center;" href="#February2020">Feb'20</a>
+				<a onclick="w3_close()" class="w3-bar-item w3-button navi" style="text-align: center;" href="#January2020">Jan'20</a>
+				<a onclick="w3_close()" class="w3-bar-item w3-button navi" style="text-align: center;" href="#December2020">Dec'19</a><br>
+				<a onclick="w3_close()" class="w3-bar-item w3-button navi" style="text-align: center; color:#ffb400 " href="index.html">Home</a>
+				<a onclick="w3_close()" class="w3-bar-item w3-button navi" style="text-align: center; color:#ffb400 " href="projects.html">Projects</a>
+			</nav>
 
-			</div>
+			<div class="col-1" style="position:fixed; font-size:25px; z-index:3" onclick="w3_open()">☰</div>
+				<!-- <p><a id="nav" style="color:grey; font-size: 14px" href="index.html">Back home</a></p><br><br>
+				<p><a id="nav" href="#April2020">Apr'20</a></p>
+				<p><a id="nav" href="#March2020">Mar'20</a></p>
+				<p><a id="nav" href="#February2020">Feb'20</a></p>
+				<p><a id="nav" href="#January2020">Jan'20</a></p>
+				<p><a id="nav" href="#December2020">Dec'19</a></p>
+			</div>-->
 
-			<div class="desc col-10" style="margin-left:15%">
+			<div class="desc col-11" style="margin-left:5%; z-index:2">
 				<!-- Blog Space -->
 				<!-- Put all the blogs here-->
 
 				<!-- Blog 1 -->
-	      <h3 id="December2020" class="heading">WIP,  website is revamping</h3>
+	      <h3 id="December2020" class="heading">Number 1</h3>
+				<h5 class="date">24th December</h5><br>
 	      <div class="paragraph">
-		    
+	            <p></p>
 				</div>
 
 
@@ -109,22 +143,13 @@
 
 		<br><br><br><br><br>
 		<div class="fade_rule"></div><br>
-		<div style="color:gray; font-size: 14px; paddin-bottom:50px">Made with ❤ by <a style="color:grey" href="http://tanmayagarwal.ml/"> Tanmay Agarwal </a></div>
+		<div style="color:gray; font-size: 14px; paddin-bottom:50px">Prakul Sharma &#9400; 2020</div>
 		<br><br><br>
 
 	</div>
 </body>
 </html>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155551148-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-155551148-1');
-</script>
 <!-- particle.js -->
 <script type="text/javascript">
 
@@ -146,4 +171,14 @@
 		requestAnimationFrame(update);
 	};
 	requestAnimationFrame(update);;
+</script>
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
 </script>
